@@ -509,3 +509,227 @@ h1 {
         margin-left: 210px;
     }
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-top: 50px;
+    }
+
+    /* Show mobile menu button */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Move date navigation to top on mobile */
+    .date-list-container {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: -100%;
+        bottom: auto;
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+        padding: 10px;
+        padding-top: 50px;
+        transition: top 0.3s ease-in-out;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+        background: linear-gradient(to right, #E6B9A6, #F3D7CA);
+    }
+
+    .date-list-container.active {
+        top: 0;
+    }
+
+    .date-list-trigger {
+        display: none;
+    }
+
+    .date-list {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: visible;
+        gap: 8px;
+        padding-bottom: 10px;
+    }
+
+    .date-item {
+        min-width: 140px;
+        padding: 10px;
+        flex-shrink: 0;
+    }
+
+    #matches {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #matches.menu-open {
+        margin-left: 0;
+    }
+
+    .match-section {
+        padding: 10px;
+    }
+
+    .match {
+        padding: 15px;
+        border-radius: 25px;
+        margin-bottom: 20px;
+    }
+
+    .league-name {
+        font-size: 0.85em;
+        padding: 6px 12px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .team {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .team.left,
+    .team.right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Team header row with logo and name */
+    .team::before {
+        content: '';
+        display: flex;
+        width: 100%;
+    }
+
+    .team-logo {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+        flex-shrink: 0;
+        float: left;
+        margin-right: 12px;
+    }
+
+    .team-name {
+        flex: 1;
+        text-align: left;
+        font-size: 1em;
+        margin: 0;
+        font-weight: 700;
+        padding-top: 8px;
+        display: block;
+    }
+
+    .goal-scorers {
+        width: 100%;
+        text-align: left;
+        font-size: 0.8em;
+        margin-top: 0;
+        padding-left: 0;
+        clear: both;
+    }
+
+    .goal-scorers li {
+        padding: 3px 0;
+    }
+
+    .score {
+        font-size: 2.2em;
+        padding: 15px 0;
+        min-width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        font-weight: 900;
+    }
+
+    .finished {
+        font-size: 0.5em;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .match-info {
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+
+    .motm {
+        margin-top: 15px;
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+
+    .lineups-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .football-field {
+        height: 350px;
+    }
+
+    .player {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .player-name {
+        font-size: 8px;
+        max-width: 60px;
+    }
+
+    .stats-container {
+        gap: 12px;
+    }
+
+    .stat-name {
+        font-size: 0.85em;
+    }
+
+    .bar-container {
+        height: 25px;
+    }
+
+    .team-value {
+        font-size: 0.9em;
+        min-width: 35px;
+    }
+
+    .match-details {
+        padding: 15px;
+    }
+
+    .event {
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+
+    .event-team {
+        min-width: 100px;
+        font-size: 0.9em;
+    }
+
+    .event-details {
+        font-size: 0.85em;
+    }
+}
