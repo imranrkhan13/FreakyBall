@@ -774,5 +774,12 @@ function displayMatchEvents(events, fixtureId) {
     eventsHTML += '</div>';
     detailsDiv.innerHTML += eventsHTML;
 }
-
+// Add this to your JavaScript file
+const menuBtn = document.createElement('button');
+menuBtn.className = 'mobile-menu-btn';
+menuBtn.innerHTML = '☰';
+menuBtn.onclick = () => {
+    document.querySelector('.date-list-container').classList.toggle('active');
+};
+document.body.appendChild(menuBtn);
 document.addEventListener('DOMContentLoaded', createDateList);
