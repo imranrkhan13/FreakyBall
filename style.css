@@ -483,34 +483,32 @@ h1 {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .lineups-container {
-        flex-direction: column;
-    }
-
-    .team {
-        width: 100%;
-    }
-
-    .scoreboard {
-        flex-wrap: wrap;
-    }
-
-    .football-field {
-        height: 400px;
-    }
-
-    #matches {
-        margin-left: 10px;
-    }
-
-    #matches.menu-open {
-        margin-left: 210px;
-    }
+/* Hide mobile menu button by default (desktop) */
+.mobile-menu-btn {
+    display: none;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .date-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    .date-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        background-color: #ee8e8e;
+        font-weight: 700;
+    }
+
     body {
         padding: 10px;
     }
@@ -520,9 +518,40 @@ h1 {
         margin-top: 50px;
     }
 
-    /* Show mobile menu button */
     .mobile-menu-btn {
-        display: block;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1002;
+        background: linear-gradient(135deg, #8B4513, #A0522D);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 0.95em;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-menu-btn::before {
+        content: '📅';
+        font-size: 1.2em;
+    }
+
+    .mobile-menu-btn.active::before {
+        content: '✕';
+        font-size: 1.3em;
     }
 
     /* Move date navigation to top on mobile */
@@ -563,7 +592,7 @@ h1 {
         min-width: 140px;
         padding: 10px;
         flex-shrink: 0;
-    }
+    }   
 
     #matches {
         margin-left: 0;
@@ -680,22 +709,49 @@ h1 {
 
     .lineups-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+    }
+
+    .team-lineup {
+        width: 87%;
+        padding: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-lineup h4 {
+        font-size: 1.4em;
+        margin-bottom: 8px;
+    }
+
+    .team-lineup p {
+        font-size: 1em;
+        margin: 8px 0 15px;
     }
 
     .football-field {
-        height: 350px;
+        height: 500px;
+        border-radius: 15px;
+        border: 4px solid #fff;
     }
 
     .player {
-        width: 30px;
-        height: 30px;
-        font-size: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+        border-width: 2.5px;
     }
 
     .player-name {
-        font-size: 8px;
-        max-width: 60px;
+        font-size: 9px;
+        max-width: 70px;
+        margin-top: 4px;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+    }
+
+    .substitutes-list li {
+        padding: 10px 12px;
+        font-size: 0.95em;
+        margin-bottom: 6px;
     }
 
     .stats-container {
@@ -732,4 +788,5 @@ h1 {
     .event-details {
         font-size: 0.85em;
     }
+
 }
