@@ -777,9 +777,18 @@ function displayMatchEvents(events, fixtureId) {
 // Add this to your JavaScript file
 const menuBtn = document.createElement('button');
 menuBtn.className = 'mobile-menu-btn';
-menuBtn.innerHTML = '☰';
+menuBtn.innerHTML = 'See Dates';
 menuBtn.onclick = () => {
-    document.querySelector('.date-list-container').classList.toggle('active');
+    const dateContainer = document.querySelector('.date-list-container');
+    dateContainer.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+
+    // Update button text based on menu state
+    if (dateContainer.classList.contains('active')) {
+        menuBtn.innerHTML = 'Close';
+    } else {
+        menuBtn.innerHTML = 'See Dates';
+    }
 };
 document.body.appendChild(menuBtn);
 document.addEventListener('DOMContentLoaded', createDateList);
